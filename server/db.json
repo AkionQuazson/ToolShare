@@ -1,0 +1,8 @@
+{
+    "user": [
+        {"id":1, "name":"Akion", "location":"Provo", "email":"adsf@gmail.com", "hashedPass":"ThisPasswordIsn'tHashed", "phone":"(385)xxx-xxxx"}
+    ],
+    "listing": [
+        {"id":1, "name":"Lawnmower", "image":"lawnmower.png", "price":"10$/day", "relatedUser":1}
+    ]
+}
