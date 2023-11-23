@@ -1,8 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+:root {
+  --dark-grey: #191919;
+  --light-grey: #d9d9d9;
+  --white-grey: #fdfdfd;
+  --light-orange: #ea9e4a;
+  --dark-orange: #df841f;
+}
+
 #root {
   font-family: 'Roboto', sans-serif;
   margin: 0;
+}
+
+header {
+  display: flex;
+  background-color: var(--dark-grey);
 }
 
 footer {

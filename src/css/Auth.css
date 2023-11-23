@@ -1,0 +1,33 @@
+:root {
+    --dark-grey: #191919;
+    --light-grey: #d9d9d9;
+    --white-grey: #fdfdfd;
+    --light-orange: #ea9e4a;
+    --dark-orange: #df841f;
+}
+
+/* FormControl bg={'#191919'} width={'800px'} m={'60px auto'} padding={'30px 175px'} */
+form {
+    background-color: var(--dark-grey);
+    color: var(--white-grey);
+    width: 800px;
+    margin: 60px auto;
+    padding: 30px 175px;
+    display: flex;
+    flex-direction: column;
+}
+
+.primary {
+    color: var(--dark-grey);
+    background-color: var(--dark-orange);
+}
+.primary::hover {
+    background-color: var(--light-orange);
+}
+
+.secondary {
+
+}
+.secondary::hover {
+    text-decoration: underline;
+}

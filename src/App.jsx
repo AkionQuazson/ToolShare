@@ -26,7 +26,7 @@ function App() {
 
   return (
     <>
-      <Box flexDir={'column'} bg={'#191919'} textAlign={'left'}>
+      <header>
         <Image 
           src={logo} 
           alt="Logo" 
@@ -36,7 +36,7 @@ function App() {
         <Button variant='ghost' color="white" >Categories</Button>
         <Button variant='ghost' color="white" >Explore</Button>
         <Input variant='outline' bg={'white'} placeholder='Search'/>
-      </Box>
+      </header>
       <BrowserRouter>
         <Routes>
           <Route exact path='/' element={<Home/>} />
