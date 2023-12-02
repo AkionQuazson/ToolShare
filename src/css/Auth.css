@@ -4,6 +4,9 @@
     --white-grey: #fdfdfd;
     --light-orange: #ea9e4a;
     --dark-orange: #df841f;
+    --size-paragraph: 18px;
+    --size-h1: 24px;
+    --size-h2: 42px;
 }
 
 /* FormControl bg={'#191919'} width={'800px'} m={'60px auto'} padding={'30px 175px'} */
@@ -15,19 +18,56 @@ form {
     padding: 30px 175px;
     display: flex;
     flex-direction: column;
+    font-family: inherit;
+    font-size: var(--size-paragraph);
+}
+
+form button {
+    /* width: 30%; */
+    margin: 5px auto;
+    padding: 5px;
+    font-family: inherit;
+    font-weight: lighter;
+    font-size: var(--size-paragraph);
+    width: 230px;
+    height: 60;
+}
+
+form label {
+    font-family: inherit;
+    font-weight: lighter;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+form input {
+    font-family: inherit;
+    font-weight: lighter;
+    margin-top: 0px;
 }
 
 .primary {
     color: var(--dark-grey);
-    background-color: var(--dark-orange);
+    background-color: var(--light-orange);
+    font-weight: lighter;
 }
 .primary::hover {
-    background-color: var(--light-orange);
+    background-color: var(--dark-orange);
+    text-decoration: underline;
 }
 
 .secondary {
-
+    font-weight: lighter;
+    background-color: var(--white-grey);
 }
 .secondary::hover {
+    text-decoration: underline;
+    background-color: var(--light-orange);
+}
+
+.tertiary {
+    font-weight: lighter;
+}
+.tertiary::hover {
     text-decoration: underline;
 }
