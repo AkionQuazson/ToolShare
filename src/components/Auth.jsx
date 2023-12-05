@@ -10,6 +10,7 @@ import {
     Input,
     Button
   } from '@chakra-ui/react';
+import { NavLink } from 'react-router-dom';
 
 const PasswordInput = () => {
     const [show, setShow] = React.useState(false)
@@ -33,13 +34,17 @@ const PasswordInput = () => {
 }
 
 export const Login = () => {
-  return  <>
-    <FormControl>
-        <FormLabel htmlFor="name"></FormLabel>
-        <input name='name' type="text" />
-        <FormLabel htmlFor="name"></FormLabel>
-        <input name='name' type="text" />
-    </FormControl>
+    return  <>
+        <form>
+            <Text textAlign={'center'} fontSize={'xx-large'} color={'white'}>Sign In</Text>
+            <FormLabel color={'white'} htmlFor="email">Email</FormLabel>
+            <Input variant='outline' bg={'white'} placeholder='example@email.com' />
+            <FormLabel color={'white'} htmlFor="password">Password</FormLabel>
+            <Input variant='outline' bg={'white'} placeholder='You can do better than "password123".' />
+            <button className='tertiary' style={{marginRight:'0', fontSize:'18px', width:'auto'}}>Forgot Password?</button>
+            <button className='primary' >Login</button>
+            <NavLink to='/register'><button className='tertiary' >Create Account</button></NavLink>
+        </form>
     </>
 }
 
@@ -57,11 +62,11 @@ export const Register = () => {
             <FormLabel color={'white'} htmlFor="confPassword">Confirm Password</FormLabel>
             <Input variant='outline' bg={'white'} placeholder='You can do better than "password123".' />
             <button className='primary' >Next</button>
-            <Button variant='link' color={'white'}>Log In</Button>
+            <NavLink to='/login'><button className='tertiary' >Log In</button></NavLink>
         </form>
 
         <footer>
-            <Text textAlign={'center'} fontSize={'x-large'}>By clicking Login, you agree to the <Link href='dne' color={'blue'} textDecoration={'underline'}>terms and <br/> conditions</Link> and <Link href='dne' color={'blue'} textDecoration={'underline'}>privacy policy</Link>.</Text>
+            <Text textAlign={'center'} fontSize={'x-large'}>By clicking Register, you agree to the <Link href='dne' color={'blue'} textDecoration={'underline'}>terms and <br/> conditions</Link> and <Link href='dne' color={'blue'} textDecoration={'underline'}>privacy policy</Link>.</Text>
         </footer>
     </>
 };

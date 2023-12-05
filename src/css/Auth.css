@@ -19,24 +19,37 @@ form {
     display: flex;
     flex-direction: column;
     font-family: inherit;
+    border-radius: 10px;
     font-size: var(--size-paragraph);
 }
+
+a {
+    margin: auto;
+  }
+  a:hover {
+    color: var(--white-grey);
+  }
+  a:visited {
+    color: var(--white-grey);
+  }
 
 form button {
     /* width: 30%; */
     margin: 5px auto;
     padding: 5px;
     font-family: inherit;
+    border-radius: 10px;
     font-weight: lighter;
     font-size: var(--size-paragraph);
     width: 230px;
     height: 60;
+    font-size: 24px;
 }
 
 form label {
     font-family: inherit;
     font-weight: lighter;
-    margin-top: 5px;
+    margin-top: 25px;
     margin-bottom: 0px;
 }
 
@@ -44,14 +57,17 @@ form input {
     font-family: inherit;
     font-weight: lighter;
     margin-top: 0px;
+    border-radius: 10px;
 }
 
 .primary {
+    margin-top: 25px;
     color: var(--dark-grey);
     background-color: var(--light-orange);
+    transition: background-color 0.5s;
     font-weight: lighter;
 }
-.primary::hover {
+.primary:hover {
     background-color: var(--dark-orange);
     text-decoration: underline;
 }
@@ -59,15 +75,17 @@ form input {
 .secondary {
     font-weight: lighter;
     background-color: var(--white-grey);
+    transition: background-color 0.5s;
 }
-.secondary::hover {
+.secondar::hover {
     text-decoration: underline;
     background-color: var(--light-orange);
 }
 
 .tertiary {
     font-weight: lighter;
+    padding: 0;
 }
-.tertiary::hover {
+.tertiary:hover {
     text-decoration: underline;
 }

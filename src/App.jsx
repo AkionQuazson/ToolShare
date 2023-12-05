@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import logo from './assets/logo.svg';
 import './css/App.css';
-import {BrowserRouter , Routes , Route} from 'react-router-dom';
+import {BrowserRouter , Routes , Route, NavLink} from 'react-router-dom';
 import { Box, Image, Button, Input } from '@chakra-ui/react';
 import Home from './components/Home';
 import {Login, Register} from './components/Auth';
@@ -26,18 +26,17 @@ function App() {
 
   return (
     <>
+      <BrowserRouter>
       <header>
-        <Image 
+        <image 
           src={logo} 
           alt="Logo" 
-          height={'100px'}
-          width={'100vw'}
+          
         />
-        <Button variant='ghost' color="white" >Categories</Button>
-        <Button variant='ghost' color="white" >Explore</Button>
+        <NavLink variant='ghost' color="white" >Categories</NavLink>
+        <NavLink variant='ghost' color="white" >Explore</NavLink>
         <Input variant='outline' bg={'white'} placeholder='Search'/>
       </header>
-      <BrowserRouter>
         <Routes>
           <Route exact path='/' element={<Home/>} />
           <Route exact path='/login' element={<Login/>} />
