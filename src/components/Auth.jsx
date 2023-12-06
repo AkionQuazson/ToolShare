@@ -40,7 +40,7 @@ export const Login = () => {
             <FormLabel color={'white'} htmlFor="email">Email</FormLabel>
             <Input variant='outline' bg={'white'} placeholder='example@email.com' />
             <FormLabel color={'white'} htmlFor="password">Password</FormLabel>
-            <Input variant='outline' bg={'white'} placeholder='You can do better than "password123".' />
+            <Input variant='outline' bg={'white'} placeholder={`I hope it's not "password123".`} />
             <button className='tertiary' style={{marginRight:'0', fontSize:'18px', width:'auto'}}>Forgot Password?</button>
             <button className='primary' >Login</button>
             <NavLink to='/register'><button className='tertiary' >Create Account</button></NavLink>

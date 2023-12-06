@@ -36,13 +36,13 @@ a {
 form button {
     /* width: 30%; */
     margin: 5px auto;
-    padding: 5px;
+    padding: 0px 15px;
     font-family: inherit;
     border-radius: 10px;
     font-weight: lighter;
     font-size: var(--size-paragraph);
-    width: 230px;
-    height: 60;
+    min-width: 230px;
+    height: 56px;
     font-size: 24px;
 }
 
@@ -83,6 +83,8 @@ form input {
 .tertiary {
     font-weight: lighter;
     padding: 0;
+    min-width: 0px;
+    height: fit-content;
 }
 .tertiary:hover {
     text-decoration: underline;

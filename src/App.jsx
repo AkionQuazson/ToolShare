@@ -28,14 +28,18 @@ function App() {
     <>
       <BrowserRouter>
       <header>
-        <image 
-          src={logo} 
-          alt="Logo" 
-          
-        />
-        <NavLink variant='ghost' color="white" >Categories</NavLink>
-        <NavLink variant='ghost' color="white" >Explore</NavLink>
+        <NavLink to='/' >
+          <Image 
+            src={logo} 
+            alt="Logo" 
+            height={'65px'}
+            margin={'20px'}
+            />
+          </NavLink>
+        <NavLink className='nav' to='/categories' >Categories</NavLink>
+        <NavLink className='nav' to='/list' >Explore</NavLink>
         <Input variant='outline' bg={'white'} placeholder='Search'/>
+
       </header>
         <Routes>
           <Route exact path='/' element={<Home/>} />

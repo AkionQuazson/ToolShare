@@ -6,6 +6,9 @@
   --white-grey: #fdfdfd;
   --light-orange: #ea9e4a;
   --dark-orange: #df841f;
+  --size-paragraph: 18px;
+  --size-h1: 24px;
+  --size-h2: 42px;
 }
 
 #root {
@@ -15,10 +18,20 @@
 }
 
 header {
+  height: 105px;
   display: flex;
   background-color: var(--dark-grey);
 }
 
 footer {
   margin: auto;
+}
+
+.nav {
+  color: var(--white-grey);
+  font-weight: lighter;
+  margin: 20px;
+}
+.nav:hover {
+  text-decoration: underline;
 }
