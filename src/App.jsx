@@ -28,17 +28,22 @@ function App() {
     <>
       <BrowserRouter>
       <header>
-        <NavLink to='/' >
-          <Image 
-            src={logo} 
-            alt="Logo" 
-            height={'65px'}
-            margin={'20px'}
-            />
-          </NavLink>
-        <NavLink className='nav' to='/categories' >Categories</NavLink>
-        <NavLink className='nav' to='/list' >Explore</NavLink>
-        <Input variant='outline' bg={'white'} placeholder='Search'/>
+        <div className="headerSplit">
+          <NavLink to='/' >
+            <Image 
+              src={logo} 
+              alt="Logo" 
+              height={'65px'}
+              margin={'20px'}
+              />
+            </NavLink>
+          <NavLink className='nav' to='/categories' >Categories</NavLink>
+          <NavLink className='nav' to='/list' >Your Tools</NavLink>
+        </div>
+        <div className="headerSplit">
+          <Input variant='outline' bg={'white'} placeholder='Search'/>
+          <NavLink className='nav' to='/login' >Login</NavLink>
+        </div>
 
       </header>
         <Routes>

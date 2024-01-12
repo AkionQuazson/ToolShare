@@ -20,11 +20,20 @@
 header {
   height: 105px;
   display: flex;
+  align-items: center;
   background-color: var(--dark-grey);
+  padding-right: 20px;
+  justify-content: space-between;
 }
 
 footer {
   margin: auto;
+}
+
+.headerSplit {
+  width: fit-content;
+  display: flex;
+  align-items: center;
 }
 
 .nav {
@@ -35,3 +44,27 @@ footer {
 .nav:hover {
   text-decoration: underline;
 }
+
+header image {
+  display: inline;
+}
+
+header input {
+  width: 480px;
+  margin: 20px;
+  font-family: inherit;
+  height: 40px;
+  padding: 0px;
+}
+
+/* header input::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  background-image: url('/path/to/search-icon.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 20px;
+  height: 20px;
+} */
