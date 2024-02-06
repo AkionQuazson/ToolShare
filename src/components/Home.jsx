@@ -24,7 +24,16 @@ const Home = () => {
   // if all show are false, display all
   // otherwise, display only those in which show is true
   const categoryButtons = categories.map((cat, i) => {
-    return <button className={'categoryButton ' + (cat.show ? 'selected' : '')} key={i} >
+    return <button 
+      className={'categoryButton ' + (cat.show ? 'selected' : '')} 
+      key={i} 
+      onClick={(e) => {
+        e.preventDefault();
+        let tempCats = [...categories];
+        tempCats[i].show = !categories[i].show;
+        setCategories(tempCats);
+      }}
+    >
       {cat.name}
     </button>
   });
@@ -32,9 +41,12 @@ const Home = () => {
     <main>
       <h1>Home</h1>
       {categoryButtons}
+      {/* Listings (filtered) */}
     </main>
     <footer>
-      Home footer        
+      <div></div>        
+      <div></div>        
+      <div></div>        
     </footer>
   </>)
 }

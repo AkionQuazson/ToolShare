@@ -2,6 +2,7 @@
     --dark-grey: #191919;
     --light-grey: #d9d9d9;
     --white-grey: #fdfdfd;
+    --white-orange: #FFD9AF;
     --light-orange: #ea9e4a;
     --dark-orange: #df841f;
     --size-paragraph: 18px;
@@ -11,7 +12,22 @@
 
 .categoryButton {
     border: 1px solid black;
+    margin: 12.5px;
+    padding: 0 10px;
+    border-radius: 10px;
 }
 .categoryButton.selected {
-    background-color: var(--light-orange);
+    background-color: var(--white-orange);
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    height: 264px;
+    background-color: var(--dark-grey);
+    margin-top: 60px;
+    display: flex;
+}
+footer div {
+    width: 33%;
 }
