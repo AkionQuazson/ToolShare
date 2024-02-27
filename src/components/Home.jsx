@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Box, Image, Button, Input } from '@chakra-ui/react';
 import '../css/Home.css'
 
 const Home = () => {
@@ -39,8 +40,17 @@ const Home = () => {
   });
   return (<>
     <main>
-      <h1>Home</h1>
-      {categoryButtons}
+      <div className="filterHeader">
+        <Input variant='outline' bg={'white'} placeholder='Search tools'/>
+        <button>Filters</button>
+        |
+        <button>Within 50mi</button>
+        {/* Filters buttons */}
+      </div>
+      <div className='categoryList'>
+        {categoryButtons}
+      </div>
+        
       {/* Listings (filtered) */}
     </main>
     <footer>

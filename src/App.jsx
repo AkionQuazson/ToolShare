@@ -41,7 +41,7 @@ function App() {
           <NavLink className='nav' to='/list' >Your Tools</NavLink>
         </div>
         <div className="headerSplit">
-          <Input variant='outline' bg={'white'} placeholder='Search'/>
+          {/* <Input variant='outline' bg={'white'} placeholder='Search'/> */}
           <NavLink className='nav' to='/login' >Login</NavLink>
         </div>
 
