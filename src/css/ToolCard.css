@@ -36,11 +36,18 @@
 }
 
 .card .title {
+    font-size: var(--size-h1);
     margin: 15px 2px 0;
 }
 
 .card .location {
-    margin: 10px 2px 0;
+    margin: 10px 2px 15px;
+    font-size: 18px;
+}
+
+.card .price {
+    margin: 0 2px;
+    font-size: 18px;
 }
 
 .card .rating {
