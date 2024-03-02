@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { Box, Image, Button, Input } from '@chakra-ui/react';
+import { NavLink } from 'react-router-dom';
+import logo from '../assets/logo.svg';
+import { Select, Input, Image } from '@chakra-ui/react';
+import ToolCard from './ToolCard';
 import '../css/Home.css'
 
 const Home = () => {
@@ -22,10 +25,9 @@ const Home = () => {
     {name:'Wood working', show:false},
     {name:'Misc.', show:false}
   ]);
-  // if all show are false, display all
-  // otherwise, display only those in which show is true
-  const categoryButtons = categories.map((cat, i) => {
-    return <button 
+    
+    const categoryButtons = categories.map((cat, i) => {
+      return <button 
       className={'categoryButton ' + (cat.show ? 'selected' : '')} 
       key={i} 
       onClick={(e) => {
@@ -34,12 +36,24 @@ const Home = () => {
         tempCats[i].show = !categories[i].show;
         setCategories(tempCats);
       }}
-    >
+      >
       {cat.name}
     </button>
   });
+
+  // if all show are false, display all
+  // otherwise, display only those in which show is true
+  const listOfListings = [
+    <ToolCard data={{image: 'img.jpg', availability: 'Jan 13', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24, interval: 'day'}}></ToolCard>,
+    <ToolCard data={{image: 'img.jpg', availability: 'Now', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24, interval: 'day'}}></ToolCard>,
+    <ToolCard data={{image: 'img.jpg', availability: 'Jan 13', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24, interval: 'day'}}></ToolCard>,
+    <ToolCard data={{image: 'img.jpg', availability: 'Jan 13', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24, interval: 'day'}}></ToolCard>,
+    <ToolCard data={{image: 'img.jpg', availability: 'Jan 13', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24, interval: 'day'}}></ToolCard>,
+    <ToolCard data={{image: 'img.jpg', availability: 'Now', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24, interval: 'day'}}></ToolCard>
+  ]
+
   return (<>
-    <main>
+    <main className='homeWrapper'>
       <div className="filterHeader">
         <Input variant='outline' bg={'white'} placeholder='Search tools'/>
         <button>Filters</button>
@@ -50,13 +64,34 @@ const Home = () => {
       <div className='categoryList'>
         {categoryButtons}
       </div>
-        
-      {/* Listings (filtered) */}
+      <Select placeholder='Sort by: '>
+        <option value='availability'>Availability</option>
+        <option value='price'>Price</option>
+        <option value='rating'>Rating</option>
+        <option value='distance'>Distance</option>
+      </Select>
+      <div style={{display: 'flex', margin: '25px auto 0', flexWrap: 'wrap', width: '1220px'}}>
+        {listOfListings}
+      </div>
+      <button>View Map</button>
     </main>
     <footer>
       <div></div>        
-      <div></div>        
-      <div></div>        
+      <div><NavLink to='/' >
+            <Image 
+              src={logo} 
+              alt="Logo" 
+              height={'65px'}
+              margin={'20px'}
+              />
+            </NavLink></div>        
+      <div className='footerButtons'>
+        <button>About</button>
+        <button>Contact Us</button>
+        <button>Privacy</button>
+        <button>Support</button>
+        <button>Terms and Conditions</button>
+      </div>
     </footer>
   </>)
 }

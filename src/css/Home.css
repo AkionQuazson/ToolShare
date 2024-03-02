@@ -10,6 +10,11 @@
     --size-h2: 42px;
 }
 
+.homeWrapper {
+    width: 1280px;
+    margin: auto;
+}
+
 .filterHeader {
     width: 1160px;
     padding: 0 0 25px 0;
@@ -23,11 +28,16 @@
 }
 
 .categoryList {
+    width: calc(1280px - 212px);
     text-align: center;
+    margin: auto;
 }
 
 .categoryButton {
     border: 1px solid black;
+    font: inherit;
+    font-size: 24px;
+    font-weight: 100;
     margin: 12.5px;
     padding: 0 10px;
     border-radius: 10px;
@@ -46,4 +56,13 @@ footer {
 }
 footer div {
     width: 33%;
+}
+.footerButtons {
+    display: flex;
+    flex-direction: column;
+}
+.footerButtons button {
+    color: white;
+    text-align: left;
+    font-weight: 100;
 }
