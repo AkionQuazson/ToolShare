@@ -1,5 +1,6 @@
 import React from "react";
-import '../css/ToolCard.css'
+import '../css/ToolCard.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const ToolCard = (props) => {
     const {data} = props;
@@ -14,11 +15,11 @@ const ToolCard = (props) => {
       {/* title */}
       <p className="title">{data.name}</p>
       {/* location */}
-      <p className="location">{data.city}, {data.state}</p>
+      <div className="location"><p className="city">{data.city}</p>, {data.state}</div>
       {/* price */}
       <p className="price">${data.price} {data.interval}</p>
       {/* rating */}
-      <p className="rating">{data.rating || 3.5}</p>
+      <p className="rating"><FontAwesomeIcon icon="fa-solid fa-star" size="sm" style={{color: "#FFD43B",}} />{data.rating || 3.5}</p>
     </div>
   );
 };

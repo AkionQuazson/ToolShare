@@ -46,6 +46,17 @@
     background-color: var(--white-orange);
 }
 
+.mapButton {
+    background-color: var(--dark-orange);
+    position: absolute;
+    right: 65px;
+    width: 230px;
+    height: 56px;
+    font-size: 24px;
+    border-radius: 10px;
+    bottom: 324px;
+}
+
 footer {
     position: relative;
     bottom: 0;

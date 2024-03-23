@@ -15,7 +15,7 @@
     overflow: hidden;
     position: relative;
     margin: 0 32.5px 65px;
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 
 .card img {
@@ -38,11 +38,22 @@
 .card .title {
     font-size: var(--size-h1);
     margin: 15px 2px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .card .location {
     margin: 10px 2px 15px;
     font-size: 18px;
+    white-space: nowrap;
+    display: flex;
+}
+
+.location .city {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .card .price {

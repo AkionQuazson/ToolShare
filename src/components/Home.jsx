@@ -49,6 +49,8 @@ const Home = () => {
     <ToolCard data={{image: 'img.jpg', availability: 'Jan 13', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24, interval: 'day'}}></ToolCard>,
     <ToolCard data={{image: 'img.jpg', availability: 'Jan 13', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24, interval: 'day'}}></ToolCard>,
     <ToolCard data={{image: 'img.jpg', availability: 'Jan 13', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24, interval: 'day'}}></ToolCard>,
+    <ToolCard data={{image: 'img.jpg', availability: 'Jan 13', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24, interval: 'day'}}></ToolCard>,
+    <ToolCard data={{image: 'img.jpg', availability: 'Now', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24, interval: 'day'}}></ToolCard>,
     <ToolCard data={{image: 'img.jpg', availability: 'Now', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24, interval: 'day'}}></ToolCard>
   ]
 
@@ -70,10 +72,10 @@ const Home = () => {
         <option value='rating'>Rating</option>
         <option value='distance'>Distance</option>
       </Select>
-      <div style={{display: 'flex', margin: '25px auto 0', flexWrap: 'wrap', width: '1220px'}}>
+      <div style={{display: 'flex', margin: '25px auto 0', flexWrap: 'wrap', width: '1220px', paddingBottom: '60px'}}>
         {listOfListings}
       </div>
-      <button>View Map</button>
+      <button className='mapButton'>View Map</button>
     </main>
     <footer>
       <div></div>        
