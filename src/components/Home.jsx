@@ -41,18 +41,48 @@ const Home = () => {
     </button>
   });
 
-  // if all show are false, display all
-  // otherwise, display only those in which show is true
-  const listOfListings = [
-    <ToolCard data={{image: 'img.jpg', availability: 'Jan 13', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24, interval: 'day'}}></ToolCard>,
-    <ToolCard data={{image: 'img.jpg', availability: 'Now', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24, interval: 'day'}}></ToolCard>,
-    <ToolCard data={{image: 'img.jpg', availability: 'Jan 13', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24, interval: 'day'}}></ToolCard>,
-    <ToolCard data={{image: 'img.jpg', availability: 'Jan 13', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24, interval: 'day'}}></ToolCard>,
-    <ToolCard data={{image: 'img.jpg', availability: 'Jan 13', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24, interval: 'day'}}></ToolCard>,
-    <ToolCard data={{image: 'img.jpg', availability: 'Jan 13', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24, interval: 'day'}}></ToolCard>,
-    <ToolCard data={{image: 'img.jpg', availability: 'Now', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24, interval: 'day'}}></ToolCard>,
-    <ToolCard data={{image: 'img.jpg', availability: 'Now', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24, interval: 'day'}}></ToolCard>
+  let allListings = [
+    {image: 'img.jpg', availability: 'now', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24.00, interval: 'day', rating: 3.2, category: 'Power tools'},
+    {image: 'img.jpg', availability: 'now', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24.00, interval: 'day', rating: 3.2, category: 'Power tools'},
+    {image: 'img.jpg', availability: 'now', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24.00, interval: 'day', rating: 3.2, category: 'Power tools'},
+    {image: 'img.jpg', availability: 'now', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24.00, interval: 'day', rating: 3.2, category: 'Power tools'},
+    {image: 'img.jpg', availability: 'now', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24.00, interval: 'day', rating: 3.2, category: 'Power tools'},
+    {image: 'img.jpg', availability: 'now', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24.00, interval: 'day', rating: 3.2, category: 'Power tools'},
+    {image: 'img.jpg', availability: 'now', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24.00, interval: 'day', rating: 3.2, category: 'Power tools'},
+    {image: 'img.jpg', availability: 'now', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24.00, interval: 'day', rating: 3.2, category: 'Power tools'},
+    {image: 'img.jpg', availability: 'now', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24.00, interval: 'day', rating: 3.2, category: 'Power tools'},
+    {image: 'img.jpg', availability: 'now', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24.00, interval: 'day', rating: 3.2, category: 'Power tools'},
+    {image: 'img.jpg', availability: 'now', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24.00, interval: 'day', rating: 3.2, category: 'Power tools'},
+    {image: 'img.jpg', availability: 'now', name: 'Electric belt sander rental', city: 'Chargoggagoggmanchauggagoggchaubunagungamaugg', state: 'Massachusetts', price: 24.00, interval: 'day', rating: 3.2, category: 'Power tools'}
   ]
+  
+  let allDisabled = true;
+  let displayedListings = [];
+  for (let i = 0; i < categories.length; i++) {
+    let cat = categories[i];
+    if (!cat.show) continue;
+    allDisabled = false;
+    let catListings = allListings.filter((list) => list.category == cat.name);
+    catListings.forEach((list) => displayedListings.push(list));
+  }
+  if (allDisabled) {
+    displayedListings = [... allListings];
+  }
+    
+    const listOfListings = displayedListings.map((listing, i)=>{
+    return (<ToolCard 
+      key={i}
+      image={listing.image}
+      availability={listing.availability}
+      title={listing.name}
+      city={listing.city}
+      state={listing.state}
+      price={listing.price}
+      interval={listing.interval}
+      rating={listing.rating}
+    >
+      </ToolCard>)
+  })
 
   return (<>
     <main className='homeWrapper'>
@@ -66,7 +96,7 @@ const Home = () => {
       <div className='categoryList'>
         {categoryButtons}
       </div>
-      <Select placeholder='Sort by: '>
+      <Select placeholder='Sort by: ' width={'152px'} height={'40px'} borderRadius={'10px'} textAlign={'center'} position={'relative'} margin={'0 65px 0 auto'} border={'1px solid black'} fontSize={'24px'} iconSize={'30px'}>
         <option value='availability'>Availability</option>
         <option value='price'>Price</option>
         <option value='rating'>Rating</option>
